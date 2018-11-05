@@ -4,6 +4,9 @@ namespace MrPrompt\Tests\Queue;
 use MrPrompt\Queue\MaxHeap;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * MaxHeap Test Case
+ */
 class MaxHeapTest extends TestCase
 {
     use UtilTrait;

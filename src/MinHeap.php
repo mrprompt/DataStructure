@@ -1,6 +1,10 @@
 <?php
 namespace MrPrompt\Queue;
 
+/**
+ * MinHeap
+ * The SplMinHeap class provides the main functionalities of a heap, keeping the minimum on the top.
+ */
 class MinHeap extends \SplMinHeap
 {
     /**
