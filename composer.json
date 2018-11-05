@@ -1,0 +1,27 @@
+{
+    "name": "mrprompt/queue",
+    "description": "Utilities to create queue using SPL.",
+    "type": "library",
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^7.4"
+    },
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Thiago Paes",
+            "email": "mrprompt@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+	    "psr-4": {
+		    "MrPrompt\\Queue\\": "src/"
+	    }
+    },
+    "autoload-dev": {
+	    "psr-4": {
+		    "MrPrompt\\Tests\\Queue\\": "tests/"
+	    }
+    }
+}
