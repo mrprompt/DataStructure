@@ -4,6 +4,9 @@ namespace MrPrompt\Tests\Queue;
 use MrPrompt\Queue\DoublyLinked;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * DoublyLinked Test Case
+ */
 class DoublyLinkedTest extends TestCase
 {
     /**
