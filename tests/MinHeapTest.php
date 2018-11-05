@@ -9,36 +9,43 @@ class MinHeapTest extends TestCase
     use UtilTrait;
 
     /**
-     * @var MinHeap
+     * Data Provider
      */
-    var $object;
-
-    /**
-     * Set Up
-     */
-    public function setUp()
+    public function valuesProvider()
     {
-        parent::setUp();
-
-        $this->object = new MinHeap();
+        return [
+            [ [ ] ],
+            [ [ 0, 1, 2, 3 ] ],
+        ];
     }
-
+    
     /**
-     * Tear Down
+     * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\MinHeap::__construct
+     * @covers \MrPrompt\Queue\MinHeap::insertAll
      */
-    public function tearDown()
+    public function constructorReturnInstanceOfSplMinHeapList($values)
     {
-        $this->object = null;
-
-        parent::tearDown();
+        $object = new MinHeap($values);
+        
+        $this->assertInstanceOf(\SplMinHeap::class, $object);
+        $this->assertEquals(count($values), count($object));
     }
 
     /**
      * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\MinHeap::__construct
+     * @covers \MrPrompt\Queue\MinHeap::insertAll
      */
-    public function classExists()
+    public function insertAllReturnBoolean($values)
     {
-        $this->assertInstanceOf(\SplMinHeap::class, $this->object);
+        $object = new MinHeap();
+        $result = $object->insertAll($values);
+
+        $this->assertEquals(count($values), count($object));
+        $this->assertTrue($result);
     }
 
     /**
@@ -49,23 +56,21 @@ class MinHeapTest extends TestCase
     public function compareValues()
     {
         return [
-            [
-                1, 0, false
-            ],
-            [
-                0, 1, true
-            ]
+            [ 1, 0, false ],
+            [ 0, 1, true ]
         ];
     }
 
     /**
      * @test
      * @dataProvider compareValues
+     * @covers \MrPrompt\Queue\MinHeap::__construct
      * @covers \MrPrompt\Queue\MinHeap::compare
      */
     public function compareReturnBooleanWhenCompareElements($value1, $value2, $expected)
     {
-        $result = $this->callMethod($this->object, 'compare', [ $value1, $value2 ]);
+        $object = new MinHeap();
+        $result = $this->callMethod($object, 'compare', [ $value1, $value2 ]);
 
         $this->assertEquals($result, $expected);
     }

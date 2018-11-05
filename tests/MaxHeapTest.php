@@ -9,36 +9,43 @@ class MaxHeapTest extends TestCase
     use UtilTrait;
 
     /**
-     * @var MaxHeap
+     * Data Provider
      */
-    var $object;
-
-    /**
-     * Set Up
-     */
-    public function setUp()
+    public function valuesProvider()
     {
-        parent::setUp();
-
-        $this->object = new MaxHeap();
+        return [
+            [ [ ] ],
+            [ [ 0, 1, 2, 3 ] ],
+        ];
     }
-
+    
     /**
-     * Tear Down
+     * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\MaxHeap::__construct
+     * @covers \MrPrompt\Queue\MaxHeap::insertAll
      */
-    public function tearDown()
+    public function constructorReturnInstanceOfSplMaxHeapList($values)
     {
-        $this->object = null;
-
-        parent::tearDown();
+        $object = new MaxHeap($values);
+        
+        $this->assertInstanceOf(\SplMaxHeap::class, $object);
+        $this->assertEquals(count($values), count($object));
     }
 
     /**
      * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\MaxHeap::__construct
+     * @covers \MrPrompt\Queue\MaxHeap::insertAll
      */
-    public function classExists()
+    public function insertAllReturnBoolean($values)
     {
-        $this->assertInstanceOf(\SplHeap::class, $this->object);
+        $object = new MaxHeap();
+        $result = $object->insertAll($values);
+
+        $this->assertEquals(count($values), count($object));
+        $this->assertTrue($result);
     }
 
     /**
@@ -49,23 +56,21 @@ class MaxHeapTest extends TestCase
     public function compareValues()
     {
         return [
-            [
-                1, 0, true
-            ],
-            [
-                0, 1, false
-            ]
+            [ 1, 0, true ],
+            [ 0, 1, false ]
         ];
     }
 
     /**
      * @test
      * @dataProvider compareValues
-     * @covers \MrPrompt\Queue\Heap::compare
+     * @covers \MrPrompt\Queue\MaxHeap::__construct
+     * @covers \MrPrompt\Queue\MaxHeap::compare
      */
     public function compareReturnBooleanWhenCompareElements($value1, $value2, $expected)
     {
-        $result = $this->callMethod($this->object, 'compare', [ $value1, $value2 ]);
+        $object = new MaxHeap();
+        $result = $this->callMethod($object, 'compare', [ $value1, $value2 ]);
 
         $this->assertEquals($result, $expected);
     }

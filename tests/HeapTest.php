@@ -59,12 +59,8 @@ class HeapTest extends TestCase
     public function compareValues()
     {
         return [
-            [
-                1, 0, true
-            ],
-            [
-                0, 1, true
-            ]
+            [ 1, 0, true ],
+            [ 0, 1, true ]
         ];
     }
 

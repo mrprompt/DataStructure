@@ -4,6 +4,28 @@ namespace MrPrompt\Queue;
 class MinHeap extends \SplMinHeap
 {
     /**
+     * Constructor
+     * 
+     * @return void
+     */
+    public function __construct(Array $values = [])
+    {
+        $this->insertAll($values);
+    }
+
+    /**
+     * Insert many values
+     * 
+     * @return bool
+     */
+    public function insertAll(Array $toAdd = [])
+    {
+        return array_walk($toAdd, function($current) {
+            return $this->insert($current);
+        });
+    }
+    
+    /**
      * Compare elements in order to place them correctly in the heap while
      * sifting up.
      *
