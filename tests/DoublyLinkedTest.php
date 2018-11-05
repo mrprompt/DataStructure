@@ -14,13 +14,9 @@ class DoublyLinkedTest extends TestCase
     /**
      * @test
      */
-    public function addObjectReturnEmpty()
+    public function classExists()
     {
-        $this->object = new DoublyLinked;
-
-        $result = $this->object->add(0, new \stdClass);
-
-        $this->assertEmpty($result);
-        $this->assertEquals(1, $this->object->count());
+        $this->object = new DoublyLinked();
+        $this->assertInstanceOf(\SplDoublyLinked::class, $this->object);
     }
 }
