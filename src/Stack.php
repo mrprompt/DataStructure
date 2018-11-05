@@ -7,14 +7,26 @@ namespace MrPrompt\Queue;
  */
 class Stack extends \SplStack
 {
-    public function setLifoMode()
+    /**
+     * Constructor
+     * 
+     * @return void
+     */
+    public function __construct(Array $values = [])
     {
-        $this->setIteratorMode(static::IT_MODE_LIFO);
+        $this->insertAll($values);
     }
 
-    public function setKeepMode()
+    /**
+     * Insert many values
+     * 
+     * @return bool
+     */
+    public function insertAll(Array $toAdd = [])
     {
-        $this->setIteratorMode(static::IT_MODE_KEEP);
+        return array_walk($toAdd, function($current) {
+            return $this->push($current);
+        });
     }
 }
 

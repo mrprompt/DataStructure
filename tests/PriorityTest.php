@@ -1,35 +1,55 @@
 <?php
 namespace MrPrompt\Tests\Queue;
 
-use MrPrompt\Queue\Priotity;
+use MrPrompt\Queue\Priority;
 use PHPUnit\Framework\TestCase;
+use MrPrompt\Tests\Queue\Traits\Util;
 
-class PriotityTest extends TestCase
+/**
+ * Priority Test Case
+ */
+class PriorityTest extends TestCase
 {
-    /**
-     * @var Priotity
-     */
-    var $object;
+    use Util;
 
     /**
-     * Set Up
+     * Data Provider
      */
-    public function setUp()
+    public function valuesProvider()
     {
-        parent::setUp();
-
-        $this->object = new Priotity();
+        return [
+            [ [ ] ],
+            [ [ 0, 1, 2, 3 ] ],
+        ];
+    }
+    
+    /**
+     * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\Priority::__construct
+     * @covers \MrPrompt\Queue\Priority::insertAll
+     */
+    public function constructorReturnInstanceOfSplPriorityList($values)
+    {
+        $object = new Priority($values);
+        
+        $this->assertInstanceOf(\SplPriorityQueue::class, $object);
+        $this->assertEquals(count($values), count($object));
     }
 
     /**
-     * Tear Down
+     * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\Priority::__construct
+     * @covers \MrPrompt\Queue\Priority::insertAll
      */
-    public function tearDown()
+    public function insertAllReturnBoolean($values)
     {
-        $this->object = null;
+        $object = new Priority();
+        $result = $object->insertAll($values);
 
-        parent::tearDown();
+        $this->assertEquals(count($values), count($object));
+        $this->assertTrue($result);
     }
-
 }
 

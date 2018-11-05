@@ -3,13 +3,14 @@ namespace MrPrompt\Tests\Queue;
 
 use MrPrompt\Queue\MinHeap;
 use PHPUnit\Framework\TestCase;
+use MrPrompt\Tests\Queue\Traits\Util;
 
 /**
  * MinHeap Test Case
  */
 class MinHeapTest extends TestCase
 {
-    use UtilTrait;
+    use Util;
 
     /**
      * Data Provider

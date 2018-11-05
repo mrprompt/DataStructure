@@ -3,13 +3,14 @@ namespace MrPrompt\Tests\Queue;
 
 use MrPrompt\Queue\Heap;
 use PHPUnit\Framework\TestCase;
+use MrPrompt\Tests\Queue\Traits\Util;
 
 /**
  * Heap Test Case
  */
 class HeapTest extends TestCase
 {
-    use UtilTrait;
+    use Util;
 
     /**
      * Data Provider

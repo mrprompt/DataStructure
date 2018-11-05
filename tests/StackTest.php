@@ -3,53 +3,53 @@ namespace MrPrompt\Tests\Queue;
 
 use MrPrompt\Queue\Stack;
 use PHPUnit\Framework\TestCase;
+use MrPrompt\Tests\Queue\Traits\Util;
 
+/**
+ * Stack Test Case
+ */
 class StackTest extends TestCase
 {
-    /**
-     * @var Stack
-     */
-    var $object;
+    use Util;
 
     /**
-     * Set Up
+     * Data Provider
      */
-    public function setUp()
+    public function valuesProvider()
     {
-        parent::setUp();
-
-        $this->object = new Stack();
+        return [
+            [ [ ] ],
+            [ [ 0, 1, 2, 3 ] ],
+        ];
     }
-
+    
     /**
-     * Tear Down
+     * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\Stack::__construct
+     * @covers \MrPrompt\Queue\Stack::insertAll
      */
-    public function tearDown()
+    public function constructorReturnInstanceOfSplStackList($values)
     {
-        $this->object = null;
-
-        parent::tearDown();
+        $object = new Stack($values);
+        
+        $this->assertInstanceOf(\SplStack::class, $object);
+        $this->assertEquals(count($values), count($object));
     }
 
     /**
      * @test
-     * @covers \MrPrompt\Queue\Stack::setLifoMode
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\Stack::__construct
+     * @covers \MrPrompt\Queue\Stack::insertAll
      */
-    public function setLifoModeReturnEmpty()
+    public function insertAllReturnBoolean($values)
     {
-        $result = $this->object->setLifoMode();
+        $object = new Stack();
+        $result = $object->insertAll($values);
 
-        $this->assertEmpty($result);
-    }
-
-    /**
-     * @test
-     * @covers \MrPrompt\Queue\Stack::setKeepMode
-     * @expectedException \RuntimeException
-     */
-    public function setKeepModeReturnEmpty()
-    {
-        $this->object->setKeepMode();
+        $this->assertEquals(count($values), count($object));
+        $this->assertTrue($result);
     }
 }
 
