@@ -7,16 +7,42 @@ use PHPUnit\Framework\TestCase;
 class DoublyLinkedTest extends TestCase
 {
     /**
-     * @var DoublyLinked
+     * Data Provider
      */
-    var $object;
+    public function valuesProvider()
+    {
+        return [
+            [ [ ] ],
+            [ [ 0, 1, 2, 3 ] ],
+        ];
+    }
+    
+    /**
+     * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\DoublyLinked::__construct
+     * @covers \MrPrompt\Queue\DoublyLinked::pushAll
+     */
+    public function constructorReturnInstanceOfSplDoublyLinkedList($values)
+    {
+        $object = new DoublyLinked($values);
+        
+        $this->assertInstanceOf(\SplDoublyLinkedList::class, $object);
+        $this->assertEquals(count($values), count($object));
+    }
 
     /**
      * @test
+     * @dataProvider valuesProvider
+     * @covers \MrPrompt\Queue\DoublyLinked::__construct
+     * @covers \MrPrompt\Queue\DoublyLinked::pushAll
      */
-    public function classExists()
+    public function pushAllReturnBoolean($values)
     {
-        $this->object = new DoublyLinked();
-        $this->assertInstanceOf(\SplDoublyLinked::class, $this->object);
+        $object = new DoublyLinked();
+        $result = $object->pushAll($values);
+
+        $this->assertEquals(count($values), count($object));
+        $this->assertTrue($result);
     }
 }

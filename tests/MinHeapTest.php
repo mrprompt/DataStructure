@@ -6,6 +6,8 @@ use PHPUnit\Framework\TestCase;
 
 class MinHeapTest extends TestCase
 {
+    use UtilTrait;
+
     /**
      * @var MinHeap
      */
@@ -48,10 +50,10 @@ class MinHeapTest extends TestCase
     {
         return [
             [
-                1, 0, true
+                1, 0, false
             ],
             [
-                0, 1, false
+                0, 1, true
             ]
         ];
     }
@@ -63,11 +65,7 @@ class MinHeapTest extends TestCase
      */
     public function compareReturnBooleanWhenCompareElements($value1, $value2, $expected)
     {
-        $class = new \ReflectionClass($this->object);
-        $method = $class->getMethod('compare');
-        $method->setAccessible(true);
-
-        $result = $method->invokeArgs($this->object, [ $value1, $value2 ]);
+        $result = $this->callMethod($this->object, 'compare', [ $value1, $value2 ]);
 
         $this->assertEquals($result, $expected);
     }
