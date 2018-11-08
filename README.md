@@ -2,10 +2,10 @@
 
 Some tests using [SPL Datastructures](http://php.net/manual/en/spl.datastructures.php).
 
-- [DoublyLinked]()
-- [Stack]()
-- [Queue]()
-- [Heap]()
-- [MaxHeap]()
-- [MinHeap]()
-- [Priority]()
+- [DoublyLinked](src/DoublyLinked.php) - Implementation using [SplDoublyLinkedList](http://php.net/manual/en/class.spldoublylinkedlist.php)
+- [Stack](src/Stack.php) - Implementation using [SplStack](http://php.net/manual/en/class.splstack.php)
+- [Queue](src/Queue.php) - Implementation using [SplQueue](http://php.net/manual/en/class.splqueue.php)
+- [Heap](src/Heap.php) - Implementation using [SplHeap](http://php.net/manual/en/class.splheap.php)
+- [MaxHeap](src/MaxHeap.php) - Implementation using [SplMaxHeap](http://php.net/manual/en/class.splmaxheap.php)
+- [MinHeap](src/MinHeap.php) - Implementation using [SplMinHeap](http://php.net/manual/en/class.splminheap.php)
+- [Priority](src/Priority.php) - Implementation using [SplPriorityQueue](http://php.net/manual/en/class.splpriorityqueue.php)
