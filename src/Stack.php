@@ -9,7 +9,7 @@ class Stack extends \SplStack
 {
     /**
      * Constructor
-     * 
+     *
      * @return void
      */
     public function __construct(Array $values = [])
@@ -19,14 +19,13 @@ class Stack extends \SplStack
 
     /**
      * Insert many values
-     * 
+     *
      * @return bool
      */
     public function insertAll(Array $toAdd = [])
     {
-        return array_walk($toAdd, function($current) {
+        return array_walk($toAdd, function ($current) {
             return $this->push($current);
         });
     }
 }
-

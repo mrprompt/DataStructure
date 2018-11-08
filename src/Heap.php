@@ -9,7 +9,7 @@ class Heap extends \SplHeap
 {
     /**
      * Constructor
-     * 
+     *
      * @return void
      */
     public function __construct(Array $values = [])
@@ -19,12 +19,12 @@ class Heap extends \SplHeap
 
     /**
      * Insert many values
-     * 
+     *
      * @return bool
      */
     public function insertAll(Array $toAdd = [])
     {
-        return array_walk($toAdd, function($current) {
+        return array_walk($toAdd, function ($current) {
             return $this->insert($current);
         });
     }
@@ -41,4 +41,3 @@ class Heap extends \SplHeap
         return $value_orig <> $value_dest;
     }
 }
-

@@ -9,7 +9,7 @@ class MaxHeap extends \SplMaxHeap
 {
     /**
      * Constructor
-     * 
+     *
      * @return void
      */
     public function __construct(Array $values = [])
@@ -19,12 +19,12 @@ class MaxHeap extends \SplMaxHeap
 
     /**
      * Insert many values
-     * 
+     *
      * @return bool
      */
     public function insertAll(Array $toAdd = [])
     {
-        return array_walk($toAdd, function($current) {
+        return array_walk($toAdd, function ($current) {
             return $this->insert($current);
         });
     }
@@ -42,4 +42,3 @@ class MaxHeap extends \SplMaxHeap
         return $value_orig > $value_dest;
     }
 }
-

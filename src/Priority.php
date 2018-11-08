@@ -14,7 +14,7 @@ class Priority extends \SplPriorityQueue
 
     /**
      * Constructor
-     * 
+     *
      * @param array $values
      * @param int $defaultPriority
      * @return void
@@ -22,18 +22,18 @@ class Priority extends \SplPriorityQueue
     public function __construct(Array $values = [], int $defaultPriority = 0)
     {
         $this->defaultPriority = $defaultPriority;
-        
+
         $this->insertAll($values);
     }
 
     /**
      * Insert many values
-     * 
+     *
      * @return bool
      */
     public function insertAll(Array $toAdd = [])
     {
-        return array_walk($toAdd, function($current) {
+        return array_walk($toAdd, function ($current) {
             return $this->insert($current, $this->defaultPriority);
         });
     }

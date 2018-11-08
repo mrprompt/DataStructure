@@ -9,7 +9,7 @@ class DoublyLinked extends \SplDoublyLinkedList
 {
     /**
      * Constructor
-     * 
+     *
      * @return void
      */
     public function __construct(Array $values = [])
@@ -19,12 +19,12 @@ class DoublyLinked extends \SplDoublyLinkedList
 
     /**
      * Push many values
-     * 
+     *
      * @return bool
      */
     public function pushAll(Array $toAdd = [])
     {
-        return array_walk($toAdd, function($current) {
+        return array_walk($toAdd, function ($current) {
             return $this->push($current);
         });
     }
