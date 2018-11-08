@@ -12,7 +12,7 @@
          verbose="true"
          bootstrap="./vendor/autoload.php">
     <testsuites>
-        <testsuite name="Queue Test Suite">
+        <testsuite name="DataStructure Test Suite">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>

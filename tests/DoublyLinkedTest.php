@@ -1,7 +1,7 @@
 <?php
-namespace MrPrompt\Tests\Queue;
+namespace  MrPrompt\DataStructure\Tests;
 
-use MrPrompt\Queue\DoublyLinked;
+use MrPrompt\DataStructure\DoublyLinked;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -23,8 +23,8 @@ class DoublyLinkedTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\DoublyLinked::__construct
-     * @covers \MrPrompt\Queue\DoublyLinked::pushAll
+     * @covers \MrPrompt\DataStructure\DoublyLinked::__construct
+     * @covers \MrPrompt\DataStructure\DoublyLinked::pushAll
      */
     public function constructorReturnInstanceOfSplDoublyLinkedList($values)
     {
@@ -37,8 +37,8 @@ class DoublyLinkedTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\DoublyLinked::__construct
-     * @covers \MrPrompt\Queue\DoublyLinked::pushAll
+     * @covers \MrPrompt\DataStructure\DoublyLinked::__construct
+     * @covers \MrPrompt\DataStructure\DoublyLinked::pushAll
      */
     public function pushAllReturnBoolean($values)
     {

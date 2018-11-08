@@ -1,5 +1,5 @@
 {
-    "name": "mrprompt/queue",
+    "name": "mrprompt/DataStructure",
     "description": "Utilities to create queue using SPL.",
     "type": "library",
     "require": {},
@@ -16,12 +16,12 @@
     "minimum-stability": "stable",
     "autoload": {
 	    "psr-4": {
-		    "MrPrompt\\Queue\\": "src/"
+		    "MrPrompt\\DataStructure\\": "src/"
 	    }
     },
     "autoload-dev": {
 	    "psr-4": {
-		    "MrPrompt\\Tests\\Queue\\": "tests/"
+		    "MrPrompt\\DataStructure\\Tests\\": "tests/"
 	    }
     }
 }

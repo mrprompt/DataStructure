@@ -1,9 +1,9 @@
 <?php
-namespace MrPrompt\Tests\Queue;
+namespace  MrPrompt\DataStructure\Tests;
 
-use MrPrompt\Queue\Queue;
+use MrPrompt\DataStructure\Queue;
 use PHPUnit\Framework\TestCase;
-use MrPrompt\Tests\Queue\Traits\Util;
+use MrPrompt\DataStructure\Tests\Traits\Util;
 
 /**
  * Queue Test Case
@@ -26,8 +26,8 @@ class QueueTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\Queue::__construct
-     * @covers \MrPrompt\Queue\Queue::insertAll
+     * @covers \MrPrompt\DataStructure\Queue::__construct
+     * @covers \MrPrompt\DataStructure\Queue::insertAll
      */
     public function constructorReturnInstanceOfSplQueue($values)
     {
@@ -40,8 +40,8 @@ class QueueTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\Queue::__construct
-     * @covers \MrPrompt\Queue\Queue::insertAll
+     * @covers \MrPrompt\DataStructure\Queue::__construct
+     * @covers \MrPrompt\DataStructure\Queue::insertAll
      */
     public function insertAllReturnBoolean($values)
     {

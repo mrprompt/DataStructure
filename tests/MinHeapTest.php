@@ -1,9 +1,9 @@
 <?php
-namespace MrPrompt\Tests\Queue;
+namespace  MrPrompt\DataStructure\Tests;
 
-use MrPrompt\Queue\MinHeap;
+use MrPrompt\DataStructure\MinHeap;
 use PHPUnit\Framework\TestCase;
-use MrPrompt\Tests\Queue\Traits\Util;
+use MrPrompt\DataStructure\Tests\Traits\Util;
 
 /**
  * MinHeap Test Case
@@ -26,8 +26,8 @@ class MinHeapTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\MinHeap::__construct
-     * @covers \MrPrompt\Queue\MinHeap::insertAll
+     * @covers \MrPrompt\DataStructure\MinHeap::__construct
+     * @covers \MrPrompt\DataStructure\MinHeap::insertAll
      */
     public function constructorReturnInstanceOfSplMinHeapList($values)
     {
@@ -40,8 +40,8 @@ class MinHeapTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\MinHeap::__construct
-     * @covers \MrPrompt\Queue\MinHeap::insertAll
+     * @covers \MrPrompt\DataStructure\MinHeap::__construct
+     * @covers \MrPrompt\DataStructure\MinHeap::insertAll
      */
     public function insertAllReturnBoolean($values)
     {
@@ -68,8 +68,8 @@ class MinHeapTest extends TestCase
     /**
      * @test
      * @dataProvider compareValues
-     * @covers \MrPrompt\Queue\MinHeap::__construct
-     * @covers \MrPrompt\Queue\MinHeap::compare
+     * @covers \MrPrompt\DataStructure\MinHeap::__construct
+     * @covers \MrPrompt\DataStructure\MinHeap::compare
      */
     public function compareReturnBooleanWhenCompareElements($value1, $value2, $expected)
     {

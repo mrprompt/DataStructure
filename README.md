@@ -1,4 +1,4 @@
-# Queue
+# DataStructure
 
 Some tests using [SPL Datastructures](http://php.net/manual/en/spl.datastructures.php).
 

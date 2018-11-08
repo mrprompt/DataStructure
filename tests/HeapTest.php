@@ -1,9 +1,9 @@
 <?php
-namespace MrPrompt\Tests\Queue;
+namespace  MrPrompt\DataStructure\Tests;
 
-use MrPrompt\Queue\Heap;
+use MrPrompt\DataStructure\Heap;
 use PHPUnit\Framework\TestCase;
-use MrPrompt\Tests\Queue\Traits\Util;
+use MrPrompt\DataStructure\Tests\Traits\Util;
 
 /**
  * Heap Test Case
@@ -26,8 +26,8 @@ class HeapTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\Heap::__construct
-     * @covers \MrPrompt\Queue\Heap::insertAll
+     * @covers \MrPrompt\DataStructure\Heap::__construct
+     * @covers \MrPrompt\DataStructure\Heap::insertAll
      */
     public function constructorReturnInstanceOfSplHeapList($values)
     {
@@ -40,8 +40,8 @@ class HeapTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\Heap::__construct
-     * @covers \MrPrompt\Queue\Heap::insertAll
+     * @covers \MrPrompt\DataStructure\Heap::__construct
+     * @covers \MrPrompt\DataStructure\Heap::insertAll
      */
     public function insertAllReturnBoolean($values)
     {
@@ -68,8 +68,8 @@ class HeapTest extends TestCase
     /**
      * @test
      * @dataProvider compareValues
-     * @covers \MrPrompt\Queue\Heap::__construct
-     * @covers \MrPrompt\Queue\Heap::compare
+     * @covers \MrPrompt\DataStructure\Heap::__construct
+     * @covers \MrPrompt\DataStructure\Heap::compare
      */
     public function compareReturnBooleanWhenCompareElements($value1, $value2, $expected)
     {

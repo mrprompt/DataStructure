@@ -1,5 +1,5 @@
 <?php
-namespace MrPrompt\Queue;
+namespace MrPrompt\DataStructure;
 
 /**
  * MinHeap

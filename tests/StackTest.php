@@ -1,9 +1,9 @@
 <?php
-namespace MrPrompt\Tests\Queue;
+namespace  MrPrompt\DataStructure\Tests;
 
-use MrPrompt\Queue\Stack;
+use MrPrompt\DataStructure\Stack;
 use PHPUnit\Framework\TestCase;
-use MrPrompt\Tests\Queue\Traits\Util;
+use MrPrompt\DataStructure\Tests\Traits\Util;
 
 /**
  * Stack Test Case
@@ -26,8 +26,8 @@ class StackTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\Stack::__construct
-     * @covers \MrPrompt\Queue\Stack::insertAll
+     * @covers \MrPrompt\DataStructure\Stack::__construct
+     * @covers \MrPrompt\DataStructure\Stack::insertAll
      */
     public function constructorReturnInstanceOfSplStackList($values)
     {
@@ -40,8 +40,8 @@ class StackTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\Stack::__construct
-     * @covers \MrPrompt\Queue\Stack::insertAll
+     * @covers \MrPrompt\DataStructure\Stack::__construct
+     * @covers \MrPrompt\DataStructure\Stack::insertAll
      */
     public function insertAllReturnBoolean($values)
     {

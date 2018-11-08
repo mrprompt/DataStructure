@@ -1,5 +1,5 @@
 <?php
-namespace MrPrompt\Tests\Queue\Traits;
+namespace MrPrompt\DataStructure\Tests\Traits;
 
 /**
  * General utilities for tests

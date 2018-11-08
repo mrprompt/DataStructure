@@ -1,9 +1,9 @@
 <?php
-namespace MrPrompt\Tests\Queue;
+namespace  MrPrompt\DataStructure\Tests;
 
-use MrPrompt\Queue\Priority;
+use MrPrompt\DataStructure\Priority;
 use PHPUnit\Framework\TestCase;
-use MrPrompt\Tests\Queue\Traits\Util;
+use MrPrompt\DataStructure\Tests\Traits\Util;
 
 /**
  * Priority Test Case
@@ -26,8 +26,8 @@ class PriorityTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\Priority::__construct
-     * @covers \MrPrompt\Queue\Priority::insertAll
+     * @covers \MrPrompt\DataStructure\Priority::__construct
+     * @covers \MrPrompt\DataStructure\Priority::insertAll
      */
     public function constructorReturnInstanceOfSplPriorityList($values)
     {
@@ -40,8 +40,8 @@ class PriorityTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\Priority::__construct
-     * @covers \MrPrompt\Queue\Priority::insertAll
+     * @covers \MrPrompt\DataStructure\Priority::__construct
+     * @covers \MrPrompt\DataStructure\Priority::insertAll
      */
     public function insertAllReturnBoolean($values)
     {

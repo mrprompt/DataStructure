@@ -1,9 +1,9 @@
 <?php
-namespace MrPrompt\Tests\Queue;
+namespace  MrPrompt\DataStructure\Tests;
 
-use MrPrompt\Queue\MaxHeap;
+use MrPrompt\DataStructure\MaxHeap;
 use PHPUnit\Framework\TestCase;
-use MrPrompt\Tests\Queue\Traits\Util;
+use MrPrompt\DataStructure\Tests\Traits\Util;
 
 /**
  * MaxHeap Test Case
@@ -26,8 +26,8 @@ class MaxHeapTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\MaxHeap::__construct
-     * @covers \MrPrompt\Queue\MaxHeap::insertAll
+     * @covers \MrPrompt\DataStructure\MaxHeap::__construct
+     * @covers \MrPrompt\DataStructure\MaxHeap::insertAll
      */
     public function constructorReturnInstanceOfSplMaxHeapList($values)
     {
@@ -40,8 +40,8 @@ class MaxHeapTest extends TestCase
     /**
      * @test
      * @dataProvider valuesProvider
-     * @covers \MrPrompt\Queue\MaxHeap::__construct
-     * @covers \MrPrompt\Queue\MaxHeap::insertAll
+     * @covers \MrPrompt\DataStructure\MaxHeap::__construct
+     * @covers \MrPrompt\DataStructure\MaxHeap::insertAll
      */
     public function insertAllReturnBoolean($values)
     {
@@ -68,8 +68,8 @@ class MaxHeapTest extends TestCase
     /**
      * @test
      * @dataProvider compareValues
-     * @covers \MrPrompt\Queue\MaxHeap::__construct
-     * @covers \MrPrompt\Queue\MaxHeap::compare
+     * @covers \MrPrompt\DataStructure\MaxHeap::__construct
+     * @covers \MrPrompt\DataStructure\MaxHeap::compare
      */
     public function compareReturnBooleanWhenCompareElements($value1, $value2, $expected)
     {
