@@ -13,3 +13,9 @@ Some tests using [SPL Datastructures](http://php.net/manual/en/spl.datastructure
 - [MaxHeap](src/MaxHeap.php) - Implementation using [SplMaxHeap](http://php.net/manual/en/class.splmaxheap.php)
 - [MinHeap](src/MinHeap.php) - Implementation using [SplMinHeap](http://php.net/manual/en/class.splminheap.php)
 - [Priority](src/Priority.php) - Implementation using [SplPriorityQueue](http://php.net/manual/en/class.splpriorityqueue.php)
+
+## Install
+
+```console
+composer.phar require mrprompt/data-structure
+```
