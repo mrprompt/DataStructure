@@ -1,5 +1,10 @@
 language: php
 
+env:
+  global:
+    - CC_TEST_REPORTER_ID=86a09970f02b3f841b263963099a65adf9bf9e85ea72db88a1d5f5ac003d01f2
+    - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct; else git log -1 --skip 1 --pretty=format:%ct; fi)
+
 php:
   - 7.2
   - nightly
@@ -11,12 +16,16 @@ matrix:
     - php: hhvm
 
 before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - if [ $(phpenv version-name) = "7.1" ]; then ./cc-test-reporter before-build; fi
+  
+install:
   - composer install --dev --prefer-dist -o
-#   - composer require --dev codeclimate/php-test-reporter
 
 script:
-#   - ./vendor/bin/phing
+  #- ./vendor/bin/phing
   - ./vendor/bin/phpunit --coverage-clover tmp/clover.xml
 
-# after_success:
-#   - ./vendor/bin/test-reporter --coverage-report tmp/clover.xml
+after_script:
+    - if [ $(phpenv version-name) = "7.1" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
